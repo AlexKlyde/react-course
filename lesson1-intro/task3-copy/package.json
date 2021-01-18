@@ -1,7 +1,8 @@
 {
-  "name": "react-lesson1-task3",
+  "name": "task3-copy",
   "version": "1.0.0",
-  "description": "react-lesson1-task3",
+  "description": "",
+  "main": "webpack.config.js",
   "scripts": {
     "build": "webpack -p",
     "start": "webpack-dev-server --open"
