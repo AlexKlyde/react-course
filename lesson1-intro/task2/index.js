@@ -2,6 +2,7 @@
 
 const rootElement = document.querySelector('#root');
 
+
 /* const renderGreeting = (elem) => {
   const containerElem = document.createElement("div");
   containerElem.classList.add("greeting");
@@ -39,3 +40,4 @@ const element = React.createElement(
 );
 
 ReactDOM.render(element, rootElement);
+
