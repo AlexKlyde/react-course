@@ -8,23 +8,11 @@ const userInfo = {
 
 const App = () => {
   return (
-    <>
       <Comment
-        user={userInfo}
+        author={userInfo}
         text="Good job!"
         date={new Date()}
       />
-      <Comment
-        user={userInfo}
-        text="Good job!"
-        date={new Date()}
-      />
-      <Comment
-        user={userInfo}
-        text="Good job!"
-        date={new Date()}
-      />
-    </>
   );
 }
 
