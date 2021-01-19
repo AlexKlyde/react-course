@@ -5,15 +5,15 @@ import Greeting from './Greeting.jsx';
 
 const rootElement = document.querySelector('#root');
 
-const getCurrentAge = date => {
+/* const getCurrentAge = date => {
   return new Date().getFullYear() - date;
-};
+}; */
 
 ReactDOM.render(
   <Greeting
     firstName="John"
     lastName="Doe"
-    birthDate={getCurrentAge(2004)}
+    birthDate={new Date().getFullYear() - 2004}
   />,
   rootElement
 );
