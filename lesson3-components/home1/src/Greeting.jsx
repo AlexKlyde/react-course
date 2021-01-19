@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 
 const getCurrentAge = date => {
-  return date.getFullYear() - 2004;
+  return date.getFullYear() - new Date().getFullYear();
 };
 
 // const getCurrentAge = birthDate = moment(birthDate).diff('09-Feb-1983', 'years');
