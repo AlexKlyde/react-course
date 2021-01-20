@@ -14,10 +14,12 @@ const rootElement = document.querySelector('#root');
  */
 ReactDOM.render(
   <Profile
-    firstName="John"
-    lastName="Doe"
-    birthDate={new Date('1991-01-17T11:11:11.819Z')}
-    birthPlace="London"
+    userData={{
+      firstName: 'John',
+      lastName: 'Doe',
+      birthDate: '1991-01-17T11:11:11.819Z',
+      birthPlace: 'London'
+    }}
   />,
   rootElement
 );
