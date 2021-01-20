@@ -28,7 +28,7 @@ class Clock extends Component {
           {this.props.location}
         </div>
         <div className="clock__time">
-          {this.state.time.toLocaleTimeString('en-US', { hour12: true })}
+          {this.state.time.toLocaleTimeString('en-US')}
         </div>
       </div>
     );
