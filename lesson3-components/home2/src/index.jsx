@@ -5,22 +5,17 @@ import Profile from './Profile.jsx';
 
 const rootElement = document.querySelector('#root');
 
-/* const userData = {
+const element = <Profile
+  userData={{
     firstName: 'John',
     lastName: 'Doe',
     birthDate: '1991-01-17T11:11:11.819Z',
     birthPlace: 'London'
-};
- */
+  }}
+/>
+
 ReactDOM.render(
-  <Profile
-    userData={{
-      firstName: 'John',
-      lastName: 'Doe',
-      birthDate: '1991-01-17T11:11:11.819Z',
-      birthPlace: 'London'
-    }}
-  />,
+  element,
   rootElement
 );
 
