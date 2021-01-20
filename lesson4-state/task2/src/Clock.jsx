@@ -11,14 +11,12 @@ class Clock extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: new Date(),
-      location: props.location,
-      offset: props.offset
+      time: getTimeWithOffset(this.props.offset),
     };
 
     setInterval(() => {
       this.setState({
-        date: getTimeWithOffset(this.state.offset),
+        time: getTimeWithOffset(this.props.offset),
       });
     }, 1000);
   }
@@ -27,10 +25,10 @@ class Clock extends Component {
     return (
       <div className="clock">
         <div className="clock__location">
-          {this.state.location}
+          {this.props.location}
         </div>
         <div className="clock__time">
-          {this.state.date.toLocaleTimeString('en-US', { hour12: true })}
+          {this.state.time.toLocaleTimeString('en-US', { hour12: true })}
         </div>
       </div>
     );
