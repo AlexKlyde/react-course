@@ -17,6 +17,7 @@ class Auth extends Component {
     this.setState({
       showSpinner: true,
     });
+    
     setTimeout(() => {
       this.setState({isLoggedIn: true, showSpinner: false});
     }, 2000);
