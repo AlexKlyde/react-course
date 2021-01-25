@@ -3,7 +3,7 @@ import UserForm from './UserForm';
 
 class App extends Component {
   createUser = user => {
-    consele.log(user);
+    console.log(user);
   }
 
   render() {
