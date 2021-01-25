@@ -10,24 +10,20 @@ class UsersList extends Component {
   };
 
   render() {
-    const usersList = this.props.users;
-    const updatedList = usersList.some(
-      element => element.name.toLowerCase() === this.state.value.toLowerCase(),
-    )
-      ? usersList.filter(
-          user => user.name.toLowerCase() === this.state.value.toLowerCase(),
-        )
-      : usersList;
+    const { value } = this.state;
+    const filteredList = this.props.users.filter(user => {
+      return user.name.toLowerCase().indexOf(value.toLowerCase()) !== -1;
+    });
 
     return (
       <div>
         <Filter
           filterText={this.state.value}
-          count={updatedList.length}
+          count={filteredList.length}
           onChange={this.handleChange}
         />
         <ul className="users">
-          {updatedList.map(user => (
+          {filteredList.map(user => (
             <User key={user.id} {...user} />
           ))}
         </ul>
