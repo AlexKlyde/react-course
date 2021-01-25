@@ -20,10 +20,11 @@ class ConnectionStatus extends Component {
   }
 
   render() {
+    const online = this.state.online;
     return (
       <div
-        className="status status_offline">
-        {this.state.online ? 'Online' : 'Offline'}
+        className={online ? "status" : "status status_offline"}>
+        {online ? 'Online' : 'Offline'}
       </div>
     );
   }
