@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 import UserForm from './UserForm';
 
-const App = () => {
-  return <div>Hello, React!</div>;
+class App extends Component {
+  createUser = user => {
+    consele.log(user);
+  }
+
+  render() {
+    return <UserForm onSubmit={this.createUser} />;
+  }
 };
 
 export default App;
