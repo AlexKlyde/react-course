@@ -23,7 +23,7 @@ class UsersList extends Component {
       <div>
         <Filter
           filterText={this.state.value}
-          count={usersList.length}
+          count={updatedList.length}
           onChange={this.handleChange}
         />
         <ul className="users">
