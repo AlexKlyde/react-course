@@ -70,7 +70,7 @@ class Game extends Component {
         <div className="game-board">
           <Board
             squares={current.squares}
-            onClick={e => this.handleClick(e)}
+            onClick={this.handleClick}
           />
         </div>
         <div className="game-info">
