@@ -10,10 +10,9 @@ class UsersList extends Component {
   };
 
   render() {
-    const { value } = this.state;
-    const filteredList = this.props.users.filter(user => {
-      return user.name.toLowerCase().indexOf(value.toLowerCase()) !== -1;
-    });
+    const filteredList = this.props.users
+      .filter(user => user.name.toLowerCase()
+        .includes(this.state.value.toLowerCase()));
 
     return (
       <div>
