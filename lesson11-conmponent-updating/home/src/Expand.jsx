@@ -12,16 +12,18 @@ class Expand extends Component {
   };
 
   render() {
+    const icon = this.state.isOpen ? (
+      <i className="fas fa-chevron-up"></i>
+    ) : (
+      <i className="fas fa-chevron-down"></i>
+    );
+
     return (
       <div className="expand border">
         <div className="expand__header">
           <span className="expand__title">{this.props.title}</span>
           <button className="expand__toggle-btn" onClick={this.handleClick}>
-            {this.state.isOpen ? (
-              <i className="fas fa-chevron-up"></i>
-            ) : (
-              <i className="fas fa-chevron-down"></i>
-            )}
+            {icon}
           </button>
         </div>
         {this.state.isOpen ? this.props.children : null}
