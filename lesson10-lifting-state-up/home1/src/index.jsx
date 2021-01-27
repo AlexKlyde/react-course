@@ -5,4 +5,4 @@ import Calculator from './Calculator';
 
 const rootElement = document.querySelector('#root');
 
-ReactDOM.render(<Calculator />,rootElement);
+ReactDOM.render(<Calculator />, rootElement);
