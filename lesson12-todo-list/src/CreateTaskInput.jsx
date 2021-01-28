@@ -13,7 +13,9 @@ class CreateTaskInput extends Component {
 
   handleTaskCreate = () => {
     this.props.onCreate(this.state.value);
-    this.setState({ value: '' });
+    this.setState({
+      value: '',
+    });
   };
 
   render() {
@@ -25,10 +27,7 @@ class CreateTaskInput extends Component {
           value={this.state.value}
           onChange={this.handleChange}
         />
-        <button
-          className="btn"
-          onClick={this.handleTaskCreate}
-        >
+        <button className="btn create-task__btn" onClick={this.handleTaskCreate}>
           Create
         </button>
       </div>
@@ -37,8 +36,3 @@ class CreateTaskInput extends Component {
 }
 
 export default CreateTaskInput;
-
-// algo
-// 1. take text from input
-// 2. create task with this text
-// 3. Add created task to the list

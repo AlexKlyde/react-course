@@ -43,7 +43,7 @@ export const deleteTask = taskId => {
     method: 'DELETE',
   }).then(response => {
     if (!response.ok) {
-      throw new Error('Failed to create task');
+      throw new Error('Failed to delete task');
     }
   });
 };
