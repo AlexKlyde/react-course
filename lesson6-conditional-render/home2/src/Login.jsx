@@ -1,14 +1,11 @@
 import React from 'react';
 
-const Login = ({onLogin}) => {
+const Login = ({ onLogin }) => {
   return (
-    <button
-      className="btn login"
-      onClick={onLogin}
-    >
+    <button className="btn login" onClick={onLogin}>
       Login
     </button>
   );
-}
+};
 
 export default Login;
