@@ -5,7 +5,7 @@ const ConnectionStatus = () => {
 
   useEffect(() => {
     const handleOnline = () => {
-      setOnline(true)
+      setOnline(true);
     };
 
     const handleOffline = () => {
@@ -21,12 +21,11 @@ const ConnectionStatus = () => {
     };
   }, []);
 
-  return isOnline ? (
-    <div className="status">online</div>
-  ) : (
-    <div className="status status_offline">offline</div>
+  return (
+    isOnline
+      ? <div className="status">online</div>
+      : <div className="status status_offline">offline</div>
   );
 };
-
 
 export default ConnectionStatus;
