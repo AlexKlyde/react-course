@@ -1,26 +1,56 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React, { Component } from 'react';
+class User extends Component {
+  state = {
+    userData: null,
+  };
 
-const fetchUserData = userId => {
-  fetch(`https://api.github.com/users/${userId}`).then(response => response.json());
-};
+  componentDidMount() {
+    this.fetchUserData();
+  }
 
-const User = () => {
-  const { productId } = useParams();
-  return (
-    <div className="user">
-      <img
-        alt="User Avatar"
-        src="https://avatars1.githubusercontent.com/u/9919?v=4"
-        className="user__avatar"
-      />
-      <div className="user__info">
-        <span className="user__name">Facebook</span>
-        <span className="user__location">San Francisco,CA</span>
+  componentDidUpdate(prevProps) {
+    const prevUser = prevProps.match.params.userId;
+    const currentUser = this.props.match.params.userId;
+
+    if (prevUser !== currentUser) {
+      this.fetchUserData();
+    }
+  }
+
+  fetchUserData() {
+    const { match } = this.props;
+    fetch(`https://api.github.com/users/${match.params.userId}`)
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        }
+
+        throw new Error();
+      })
+      .then(userData => {
+        this.setState({
+          userData,
+        });
+      });
+  }
+
+  render() {
+    const { userData } = this.state;
+    if (!userData) {
+      return null;
+    }
+
+    const { name, location, avatar_url } = userData;
+    return (
+      <div className="user">
+        <img alt="User Avatar" src={avatar_url} className="user__avatar" />
+        <div className="user__info">
+          <span className="user__name">{name}</span>
+          <span className="user__location">{location}</span>
+        </div>
       </div>
-    </div>
-  );
-};
-
+    );
+  }
+}
 
 export default User;
