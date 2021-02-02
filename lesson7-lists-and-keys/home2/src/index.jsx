@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import UsersList from './UsersList';
 import './index.scss';
+import UsersList from './UsersList.jsx';
+
+const rootElement = document.querySelector('#root');
 
 const users = [
   {
@@ -21,36 +23,29 @@ const users = [
   },
   {
     id: 'id-3',
-    age: 26,
-    name: 'Sam',
-  },
-  {
-    id: 'id-4',
-    age: 33,
+    age: 40,
     name: 'Greg',
   },
   {
+    id: 'id-4',
+    age: 27,
+    name: 'Tod',
+  },
+  {
     id: 'id-5',
-    age: 46,
-    name: 'Alen',
+    age: 35,
+    name: 'Sam',
   },
   {
     id: 'id-6',
-    age: 25,
-    name: 'Bred',
+    age: 75,
+    name: 'Ivan',
   },
   {
     id: 'id-7',
-    age: 46,
-    name: 'George',
-  },
-  {
-    id: 'id-8',
-    age: 34,
-    name: 'Pit',
+    age: 21,
+    name: 'John',
   },
 ];
 
-const rootElement = document.querySelector('#root');
-
-ReactDOM.render(<UsersList users={users} />,rootElement);
+ReactDOM.render(<UsersList users={users} />, rootElement);

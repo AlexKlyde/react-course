@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
-import Pagination from './Pagination';
-import User from './User';
+import React from 'react';
+import Pagination from './Pagination.jsx';
+import User from './User.jsx';
 
-class UsersList extends Component {
+class UsersList extends React.Component {
   constructor(props) {
-    super(props)
-
+    super(props),
     this.state = {
       currentPage: 1,
       usersPerPage: 3,
@@ -29,19 +28,19 @@ class UsersList extends Component {
     const { currentPage, usersPerPage } = this.state;
 
     const start = (currentPage - 1) * usersPerPage;
-    const usersList = users.slice(start, start + usersPerPage);
+    const usersToDiplay = users.slice(start, start + usersPerPage);
 
     return (
       <div>
         <Pagination
-        goPrev={this.goPrev}
-        goNext={this.goNext}
-        currentPage={currentPage}
-        totalItems={users.length}
-        itemsPerPage={usersPerPage}
+          goPrev={this.goPrev}
+          goNext={this.goNext}
+          currentPage={currentPage}
+          totalItems={users.length}
+          itemsPerPage={usersPerPage}
         />
         <ul className="users">
-          {usersList.map(user => (
+          {usersToDiplay.map(user => (
             <User key={user.id} {...user} />
           ))}
         </ul>
