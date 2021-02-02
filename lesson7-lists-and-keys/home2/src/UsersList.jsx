@@ -25,7 +25,7 @@ class UsersList extends Component {
   };
 
   render() {
-    const users = this.props.users;
+    const { users } = this.props;
     const { currentPage, usersPerPage } = this.state;
 
     const start = (currentPage - 1) * usersPerPage;
