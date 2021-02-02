@@ -1,27 +1,21 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Clock from './Clock';
 
-class App extends Component {
-  state = {
-    visible: true,
-  }
+const App = () => {
+  const [isVisible, setState] = useState(true);
 
-  toggle = () => {
-    this.setState({
-      visible: !this.state.visible,
-    });
-  }
+  const handleClick = () => {
+    return setState(!isVisible);
+  };
 
-  render() {
-    return (
-      <>
-        <button onClick={this.toggle}>Toggle</button>
-        {this.state.visible && <Clock location="New York" offset={-5} />}
-        {this.state.visible && <Clock location="Kyiv" offset={2} />}
-        {this.state.visible && <Clock location="London" offset={0} />}
-      </>
-    );
-  }
-};
+  return (
+    <>
+      <button onClick={handleClick}>Toggle</button>
+      {isVisible && <Clock location="Kyiv" offset={2} />}
+      {isVisible && <Clock location="New York" offset={-5} />}
+      {isVisible && <Clock location="London" offset={0} />}
+    </>
+  );
+}
 
 export default App;
