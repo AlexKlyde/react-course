@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 
 class ConnectionStatus extends Component {
   state = {
-    isOnline: true,
-  }
+    status: 'online',
+  };
 
-   componentDidMount() {
+  componentDidMount() {
     window.addEventListener('online', this.handleOnline);
     window.addEventListener('offline', this.handleOffLine);
   }
@@ -17,24 +17,28 @@ class ConnectionStatus extends Component {
 
   handleOnline = () => {
     this.setState({
-      isOnline: true,
+      status: 'online',
     });
-  }
+  };
 
   handleOffLine = () => {
     this.setState({
-      isOnline: false,
+      status: 'offline',
     });
-  }
+  };
 
   render() {
-    return (
-        this.state.isOnline
-        ? <div className="status">online</div>
-        : <div className="status status_offline">offline</div>
-    );
-  };
-}
+    const { status } = this.state;
+    const className = `status ${status === 'offline' ? 'status_offline' : null}`;
 
+    return (
+      /* this.state.isOnline
+        ? <div className="status">online</div>
+        : <div className="status status_offline">offline</div> */
+
+      <div className={className}>{status}</div>
+    );
+  }
+}
 
 export default ConnectionStatus;
